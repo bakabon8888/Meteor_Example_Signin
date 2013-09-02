@@ -1,0 +1,27 @@
+<head>
+  <title>signup</title>
+</head>
+
+<body>
+  {{loginButtons}}
+  {{> notMailVerified}}
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  {{greeting}}
+  <input type="button" value="Click" />
+</template>
+
+<template name="notMailVerified">
+	{{#if msg}}
+	{{#with msg}}
+	<div class="alert alert-error">
+		<a class="close" data-dismiss="alert">×</a>
+		<h4 class="alert-heading">{{title}}</h4>
+		{{body}}
+	</div>
+	{{/with}}
+	{{/if}}
+</template>
